@@ -37,21 +37,15 @@
             <li><a href="/load">Charger</a></li>
           {% endif %}
           {% if page == 'show.html' %}
-            <li class="active"><a href="/show-database">BDD</a></li>
+            <li class="active"><a href="/show">BDD</a></li>
           {% else %}
-            <li><a href="/show-database">BDD</a></li>
+            <li><a href="/show">BDD</a></li>
           {% endif %}
           {% if page == 'stat.html' %}
             <li class="active"><a href="/stat">Stat</a></li>
           {% else %}
             <li><a href="/stat">Stat</a></li>
           {% endif %}
-
-            <li><a href="/load">Charger</a></li>
-            <li><a href="/home">Home</a></li>
-          <li><a href="/load">Charger</a></li>
-          <li><a href="/show-database">BDD</a></li>
-          <li><a href="/stat">Stat</a></li>
         </ul>
       </div>
     </nav>
@@ -68,5 +62,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/ajax.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/pagination.js') }}"></script>
   </body>
 </html>

@@ -22,7 +22,7 @@ def load():
 	return render_template('index.html', page='load.html')
 
 @app.route('/show')
-def load():
+def show():
 	return render_template('index.html', page='show.html')
 
 

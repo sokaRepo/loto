@@ -27,3 +27,13 @@ pip install MySQL-python # librairie MySQL pour python
 ```
 pip install requests # téléchargement de fichier
 ```
+
+### Lancer l'application
+```
+export FLASK_APP=app.py
+flask run
+```
+ou
+```
+python app.py
+```

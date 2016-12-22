@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Méteo</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/design.css') }}">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Loto</a>
+        </div>
+        <ul class="nav navbar-nav">
+          {% if page == 'home.html' %}
+            <li class="active"><a href="/home">Home</a></li>
+          {% else %}
+            <li><a href="/home">Home</a></li>
+          {% endif %}
+          {% if page == 'load.html' %}
+            <li class="active"><a href="/load">Charger</a></li>
+          {% else %}
+            <li><a href="/load">Charger</a></li>
+          {% endif %}
+          {% if page == 'show.html' %}
+            <li class="active"><a href="/show-database">BDD</a></li>
+          {% else %}
+            <li><a href="/show-database">BDD</a></li>
+          {% endif %}
+          {% if page == 'stat.html' %}
+            <li class="active"><a href="/stat">Stat</a></li>
+          {% else %}
+            <li><a href="/stat">Stat</a></li>
+          {% endif %}
+
+            <li><a href="/load">Charger</a></li>
+            <li><a href="/home">Home</a></li>
+          <li><a href="/load">Charger</a></li>
+          <li><a href="/show-database">BDD</a></li>
+          <li><a href="/stat">Stat</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    {% if page %}
+      {% include page %}
+    {% endif %}
+
+
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/ajax.js') }}"></script>
+  </body>
+</html>

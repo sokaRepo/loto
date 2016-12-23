@@ -1,0 +1,64 @@
+<div class="table-responsive">
+		        <table class="table table-hover">
+		          <thead>
+		            <tr>
+		              <th>#</th>
+		              <th>Date</th>
+		              <th>Heure</th>
+		              <th>Date de forclusion</th>
+		              <th>N1</th>
+		              <th>N2</th>
+		              <th>N3</th>
+		              <th>N4</th>
+		              <th>N5</th>
+		              <th>N6</th>
+		              <th>N7</th>
+		              <th>N Bonus 1</th>
+		              <th>N Bonus 2</th>
+		              <th>N Bonus 3</th>
+		              <th>N Bonus 4</th>
+		              <th>N Bonus 5</th>
+
+		            </tr>
+		          </thead>
+		          <tbody id="dbTable">
+					{% for row in data %}
+						<tr>
+						<td>{{ row.0 }}</td>
+						<td>{{ row.1 }}</td>
+						<td>{{ row.2 }}</td>
+						<td>{{ row.3 }}</td>
+						<td>{{ row.4 }}</td>
+						<td>{{ row.5 }}</td>
+						<td>{{ row.6 }}</td>
+						<td>{{ row.7 }}</td>
+						<td>{{ row.8 }}</td>
+						<td>{{ row.9 }}</td>
+						<td>{{ row.10 }}</td>
+						<td>{{ row.11 }}</td>
+						<td>{{ row.12 }}</td>
+						<td>{{ row.13 }}</td>
+						<td>{{ row.14 }}</td>
+						<td>{{ row.15 }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+				</table>   
+				</div>
+				<ul class="pagination">
+					{% set p = page | int %}
+					{% if p > 3%}
+						<li><a onclick="get_db_table({{ p-2 }})">{{ p-2 }}</a></li>
+						<li><a onclick="get_db_table({{ p-1 }})">{{ p-1 }}</a></li>
+						<li class="active"><a>{{ p }}</a></li>
+						<li><a onclick="get_db_table({{ p+1 }})">{{ p+1 }}</a></li>
+						<li><a onclick="get_db_table({{ p+2 }})">{{ p+2 }}</a></li>
+					{% else %}
+						<li class="active"><a>{{ p }}</a></li>
+						<li><a onclick="get_db_table({{ p+1 }})">{{ p+1 }}</a></li>
+						<li><a onclick="get_db_table({{ p+2 }})">{{ p+2 }}</a></li>
+						<li><a onclick="get_db_table({{ p+3 }})">{{ p+3 }}</a></li>
+						<li><a onclick="get_db_table({{ p+4 }})">{{ p+4 }}</a></li>
+					{% endif %}
+
+				</ul>

@@ -23,7 +23,7 @@ def load():
 
 @app.route('/show')
 def show():
-	return render_template('index.html', page='show.html')
+	return render_template('index.html', page='show.html', data=load_data(1))
 
 
 if __name__ == '__main__':

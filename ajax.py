@@ -35,3 +35,7 @@ def exec_sql():
 	if execute_sql():
 		return render_template('ajax.html', info=jsonify({'status':'ok'}))
 	return render_template('ajax.html', info=jsonify({'status':'error'}))
+
+@ajax.route('/ajax/dbtable/<int:page>')
+def get_db_table(page):
+	return render_template('table.html', data=load_data(int(page)), page=int(page) )

@@ -71,3 +71,9 @@ function exec_sql() {
 	});	
 }
 
+
+function get_db_table(page) {
+	$.get("/ajax/dbtable/"+page, function(data) {
+		$("#dbTable").html(data);
+	});		
+}

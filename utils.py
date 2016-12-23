@@ -4,6 +4,7 @@ import zipfile
 import fileinput
 from re import sub
 import MySQLdb
+from math import ceil
 
 def con_mysql():
 	db = MySQLdb.connect(host="localhost",    # your host, usually localhost
@@ -84,3 +85,15 @@ def execute_sql():
 	except Exception as e:
 		print e
 	return False
+
+def load_data(n):
+	row_per_page = 20
+	cur, db = con_mysql()
+	cur.execute('SELECT COUNT(*) FROM data')
+	total = int(cur.fetchall()[0][0])
+	nb_page = ceil(total/row_per_page)
+	if n > nb_page:
+		n = nb_page
+	row = (n-1)*row_per_page
+	cur.execute('''SELECT * FROM data LIMIT {},{} '''.format(row, row_per_page))
+	return cur.fetchall()

@@ -46,19 +46,27 @@
 				</table>   
 				</div>
 				<ul class="pagination">
+					{% set page = 1 if not page else page%}
 					{% set p = page | int %}
-					{% if p > 3%}
+					{% if p > 2 %}
 						<li><a onclick="get_db_table({{ p-2 }})">{{ p-2 }}</a></li>
 						<li><a onclick="get_db_table({{ p-1 }})">{{ p-1 }}</a></li>
 						<li class="active"><a>{{ p }}</a></li>
 						<li><a onclick="get_db_table({{ p+1 }})">{{ p+1 }}</a></li>
 						<li><a onclick="get_db_table({{ p+2 }})">{{ p+2 }}</a></li>
+					{% elif p == 2 %}
+						<li><a onclick="get_db_table({{ p-1 }})">{{ p-1 }}</a></li>
+						<li class="active"><a>{{ p }}</a></li>
+						<li><a onclick="get_db_table({{ p+2 }})">{{ p+2 }}</a></li>
+						<li><a onclick="get_db_table({{ p+3 }})">{{ p+3 }}</a></li>
+						<li><a onclick="get_db_table({{ p+4 }})">{{ p+4 }}</a></li>
 					{% else %}
 						<li class="active"><a>{{ p }}</a></li>
 						<li><a onclick="get_db_table({{ p+1 }})">{{ p+1 }}</a></li>
 						<li><a onclick="get_db_table({{ p+2 }})">{{ p+2 }}</a></li>
 						<li><a onclick="get_db_table({{ p+3 }})">{{ p+3 }}</a></li>
 						<li><a onclick="get_db_table({{ p+4 }})">{{ p+4 }}</a></li>
+					
 					{% endif %}
 
 				</ul>

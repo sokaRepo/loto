@@ -1,6 +1,7 @@
 #-*- coding:utf8 -*-
 from flask import Flask, render_template, redirect, url_for
 from ajax import *
+from utils import load_data
 
 app = Flask(__name__)
 
@@ -24,6 +25,11 @@ def load():
 @app.route('/show')
 def show():
 	return render_template('index.html', page='show.html', data=load_data(1))
+
+@app.route('/stat')
+def stat():
+	return render_template('index.html', page='stat.html', stat=get_best_for_each_num())
+
 
 
 if __name__ == '__main__':

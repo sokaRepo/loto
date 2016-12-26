@@ -73,7 +73,13 @@ function exec_sql() {
 
 
 function get_db_table(page) {
-	$.get("/ajax/dbtable/"+page, function(data) {
+	$.get("/ajax/dbtable/"+page, function(data) {	
 		$("#dbTable").html(data);
 	});		
+}
+
+function get_best_for_stat() {
+	$.get("/ajax/stat/getbest"+page, function(data) {	
+		$("#firstTable").html(data);
+	});			
 }

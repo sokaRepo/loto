@@ -39,3 +39,8 @@ def exec_sql():
 @ajax.route('/ajax/dbtable/<int:page>')
 def get_db_table(page):
 	return render_template('table.html', data=load_data(int(page)), page=int(page) )
+
+@ajax.route('/ajax/stat/getbest')
+def get_best():
+	stat = get_best_for_each_num()
+	return render_template('stat_table1.html', stat=stat)

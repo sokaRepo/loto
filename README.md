@@ -73,6 +73,7 @@ from app import app as application
 
 Dans le fichier utils.py changer la valeur de APP_PATH
 ```
+
 ### Caractéristiques
 * Charger le dernier fichier ZIP loto sur https://www.fdj.fr/jeux/amigo/historiques
 * Décompression du fichier ZIP afin d'avoir le fichier CSV

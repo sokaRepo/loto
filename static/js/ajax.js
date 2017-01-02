@@ -79,7 +79,15 @@ function get_db_table(page) {
 }
 
 function get_best_for_stat() {
-	$.get("/ajax/stat/getbest"+page, function(data) {	
+	$.get("/ajax/stat/getbest", function(data) {	
 		$("#firstTable").html(data);
+
+	});			
+}
+
+function get_worst_for_stat() {
+	$.get("/ajax/stat/getworst", function(data) {	
+		$("#secondTable").html(data);
+
 	});			
 }

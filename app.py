@@ -28,7 +28,8 @@ def show():
 
 @app.route('/stat')
 def stat():
-	return render_template('index.html', page='stat.html', stat=get_best_for_each_num())
+	#return render_template('index.html', page='stat.html', stat=get_best_for_each_num())
+	return render_template('index.html', page='stat.html')
 
 
 

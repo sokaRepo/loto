@@ -44,3 +44,8 @@ def get_db_table(page):
 def get_best():
 	stat = get_best_for_each_num()
 	return render_template('stat_table1.html', stat=stat)
+
+@ajax.route('/ajax/stat/getworst')
+def get_worst():
+	stat = get_worst_for_each_num()
+	return render_template('stat_table1.html', stat=stat)

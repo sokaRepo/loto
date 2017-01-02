@@ -6,8 +6,18 @@
 	    <div class="row">
 	    	<h3>Les meilleurs tirages pour chaque numéro</h3>
 	    	<div id="firstTable">
-	    	{% include 'stat_table1.html' %}
+	    		
+	    		<img src="{{ url_for('static', filename='images/loading.svg') }}" width="50" height="50">
 	    	</div>
+
+	    	<h3>Les moins bons tirages pour chaque numéro</h3>
+	    	<div id="secondTable">
+	    		<img src="{{ url_for('static', filename='images/loading.svg') }}" width="50" height="50">
+	    	</div>
+	    	<script>
+	    		setTimeout(function() { get_best_for_stat() }, 500);
+	    		setTimeout(function() { get_worst_for_stat() }, 500);
+	    	</script>
 		</div>
 	</div>
 
